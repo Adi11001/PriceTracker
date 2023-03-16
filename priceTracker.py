@@ -9,14 +9,22 @@ Following are the steps performed
 import requests
 import smtplib
 import time
-
 from bs4 import BeautifulSoup
 from csv import writer
+
 #Track Price of Assassins creed Ezio collection every minute and send mail if price is less than 900rs 
 url = 'https://gameloot.in/shop/assassins-creed-the-ezio-collection-ps4-pre-owned/'
-price_threshold=700
+
 #Class of the price tag to be tracked
 price_class='woocommerce-Price-amount amount'
+
+price_threshold=700
+
+##########Email Details##########
+sender_email = 'sender@gmail.com'
+sender_app_password = '123456'
+receiver_email = 'receiver@gmail.com'
+#################################
 
 #Infinite Loop to keep Looking
 while True:
@@ -33,9 +41,9 @@ while True:
         smt=smtplib.SMTP('smtp.gmail.com', 587)
         smt.ehlo()
         smt.starttls()
-        smt.login('gameending25@gmail.com', 'tbhwobrawhvsufhn')
-        smt.sendmail('gameending25@gmail.com',
-                    'waniaditya2525@gmail.com',
+        smt.login(sender_email, sender_app_password)
+        smt.sendmail(sender_email,
+                    receiver_email,
                     f"Subject: Headphone Price Notifier\n\nHi, Price has dropped to {price}.Buy it!")
         smt.quit()
     else:
