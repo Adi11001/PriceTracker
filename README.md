@@ -8,6 +8,6 @@ Following are the steps performed
 
 
 Email Related Fields:
-sender_email : Email id from where you want the notification to be sent
-sender_app_password = App password of the sender emailid. Remember app password is different from password. Google how to get one for your mail id
-receiver_email = Email id where you want to receive the notification
+1. sender_email : Email id from where you want the notification to be sent
+2. sender_app_password = App password of the sender emailid. Remember app password is different from password. Google how to get one for your mail id
+3. receiver_email = Email id where you want to receive the notification
